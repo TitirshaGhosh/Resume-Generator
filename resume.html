@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Resume-Generator/style1.css">
+  <title>Resume Generator</title>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">titirscv.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/Resume-Generator/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Resume-Generator/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Resume-Generator/contactus.html">Contact us</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- NAVBAR ends here-->
+
+  <!-- form -->
+  <div class="container" id="cv">
+    <h2 class="text-center my-2">Resume</h2>
+
+    <div class="row ">
+      <!-- Left side -->
+      <div class="col-md-6">
+
+        <h4 class="text-center ">Personal information</h4>
+        <!-- Name -->
+        <div class="form-group mt-2">
+          <label for="name">Your Name</label>
+          <input type="text" placeholder="Enter the name" id="name" class="form-control">
+        </div>
+        <!-- Email -->
+        <div class="form mt-2">
+          <label for="email">Your Email</label>
+          <input type="text" placeholder="Enter the email" id="email" class="form-control">
+        </div>
+        <!-- Phone -->
+        <div class="form mt-2">
+          <label for="phno">Your Phone No.</label>
+          <input type="text" placeholder="Enter contact no." id="phno" class="form-control">
+        </div>
+        <!-- Address -->
+        <div class="form mt-2">
+          <label for="addr">Your Address</label>
+          <textarea placeholder="Enter your address" id="addr" class="form-control"></textarea>
+        </div>
+        <!-- Linkedin -->
+        <div class="form mt-2">
+          <label for="linkid">Linkedin Id</label>
+          <input type="url" placeholder="Enter your linkedin id" id="linkid" class="form-control">
+          <!-- </textarea> -->
+        </div>
+        <!-- Dob -->
+        <div class="form mt-2">
+          <label for="bd">DOB</label>
+          <input type="date" placeholder="Enter your DOB" id="bd" class="form-control"></textarea>
+        </div>
+        <!-- Objective -->
+        <div class="form mt-2">
+          <label for="ob">About Yourself</label>
+          <textarea placeholder="Enter your objective" id="ob" maxlength="150" class="form-control"></textarea>
+        </div>
+        <div class="form mt-2">
+          <label for="">Select your photo</label>
+          <input id="pic" type="file" class="form">
+
+        </div>
+      </div>
+      <!-- Right side-->
+      <div class="col-md-6">
+        <h4 class="text-center ">Professional information</h4>
+        <!-- Education -->
+        <div class="form mt-2" id="ed">
+          <label for="">Education History</label>
+          <textarea placeholder="Enter your education details" class="form-control edu"></textarea>
+
+          <div class="container text-center mt-2 " id="eduButton">
+            <button onclick="addNewEdu()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+        <!-- Work -->
+        <div class="form mt-2" id="we">
+          <label for="">Work Experience</label>
+          <textarea placeholder="Enter your work experience" class="form-control workex"></textarea>
+          <div class="container text-center mt-2" id="workButton">
+            <button onclick="addNewWork()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+        <!-- Skill -->
+        <div class="form mt-2" id="sk">
+          <label for="">Skills</label>
+          <input type="text" placeholder="Enter your skills" class="form-control skill">
+          <div class="container text-center mt-2" id="skillButton">
+            <button onclick=" addNewSkill()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+        <!-- Achievements -->
+        <div class="form mt-2" id="ac">
+          <label for="">Achievements</label>
+          <textarea placeholder="Enter your achievements" class="form-control ach"></textarea>
+          <div class="container text-center mt-2" id="achieveButton">
+            <button onclick="addNewAchieve()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+        <!-- Languange -->
+        <div class="form mt-2" id="ln">
+          <label for="">Languange</label>
+          <input type="text" placeholder="Enter your languange" class="form-control lang">
+          <div class="container text-center mt-2" id="langButton">
+            <button onclick="addNewLang()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+        <!-- Project Work -->
+        <div class="form mt-2" id="pr">
+          <label for="">Project Work</label>
+          <textarea placeholder="Enter your project" class="form-control pro"></textarea>
+          <div class="container text-center mt-2" id="proButton">
+            <button onclick="addNewProject()" class="btn btn-outline-success">Add</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container mt-4 my -4 text-center">
+      <button onclick="generateCV()" class="btn i ">Generate Cv</button>
+    </div>
+  </div>
+
+  <!-- form ends here -->
+
+  <!-- ///////////////////Template //////////////-->
+
+  <div class="container mt-4 " id="cv-template">
+    <div class="row">
+      <div class="box col-md-12">
+        <header class="head bg text-center ">
+          <!-- image -->
+          <img src="https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_person_people_avatar_icon_159366.png"
+            alt="" class="img-fluid pimg  my-2 mx-2" id="picT">
+          <h2 class="text-center" id="nameT">Titirsha Ghosh</h2>
+
+          <!-- objective -->
+          <div class="card-content text-center">
+            <p id="obT">Lorem ipsum dolor sit, amet consectetur adipisicing w`sSAelit.</p>
+          </div>
+        </header>
+      </div>
+
+      <div class="col-md-5  bg mt-2">
+        <!-- //left// -->
+        <div class="container ">
+          <p id="phnoT">ph no</p>
+          <p id="emailT">mail</p>
+          <p id="addrT">address</p>
+          <p id="bdT">Dob</p>
+          <p><a id="linkidT" href="" target="_main" class="bg">Linkedinid</a></p>
+          <hr color="white">
+          <!-- languange -->
+          <div class="lang1 mt-4">
+            <h4>Languange:</h4>
+            <div class="lancontent">
+              <ul id="lnT" type="square">
+                <li>bengali</li>
+                <li>eng</li>
+              </ul>
+            </div>
+          </div>
+          <hr color="white">
+          <!--Skills  -->
+          <div class="ski mt-4">
+            <h4>Skills:</h4>
+            <div class="skillcontent ">
+              <ul id="skT" type="square">
+                <li>C</li>
+                <li>C++</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <!--// Right side//-->
+        <!-- EDUCATION -->
+        <div class="card mt-4">
+          <div class="card-title bg">
+            <h4>Education Details</h4>
+          </div>
+          <div class="card-content">
+            <ul id="edT">
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- work -->
+        <div class="card mt-4">
+          <div class="card-title bg">
+            <h4>Work Experience</h4>
+          </div>
+          <div class="card-content">
+            <ul id="weT">
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Achievements -->
+        <div class="card mt-4">
+          <div class="card-title bg">
+            <h4>Achievements</h4>
+          </div>
+          <div class="card-content">
+            <ul id="acT">
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Projects -->
+        <div class="card mt-4">
+          <div class="card-title bg">
+            <h4>Projects</h4>
+          </div>
+          <div class="card-content">
+            <ul id="prT">
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem, ipsum dolor.</li>
+            </ul>
+          </div>
+        </div>
+
+        <br><br><br>
+      </div>
+    </div>
+    <div class="container text-center  mt-4">
+      <button onclick="download()" class="btn bg"><i class="fa fa-download"></i><span>Download</span></button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/Resume-Generator/script.js"></script>
+</body>
+
+</html>
